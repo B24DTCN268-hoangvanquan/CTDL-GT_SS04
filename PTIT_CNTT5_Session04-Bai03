@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Nhập số lượng phần tử của mảng: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Nhập các phần tử của mảng:\n");
+    for (int i = 0; i < n; i++) {
+        printf("arr[%d] = ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    int min = arr[0];
+    int index = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+            index = i;
+        }
+    }
+
+    printf("Chỉ số của phần tử nhỏ nhất đầu tiên trong mảng là: %d\n", index);
+    return 0;
+}
