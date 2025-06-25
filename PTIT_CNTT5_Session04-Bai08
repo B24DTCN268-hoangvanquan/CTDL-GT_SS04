@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Nhập số lượng phần tử của mảng: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Nhập các phần tử của mảng:\n");
+    for (int i = 0; i < n; i++) {
+        printf("arr[%d] = ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    int x;
+    printf("Nhập giá trị cần tìm: ");
+    scanf("%d", &x);
+
+    int found = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == x) {
+            if (found == 0) {
+                printf("Các vị trí có giá trị %d: ", x);
+            }
+            printf("%d", i);
+            if (i < n - 1) printf(", ");
+            found = 1;
+        }
+    }
+
+    if (!found) {
+        printf("Phần tử không có trong mảng\n");
+    } else {
+        printf("\n");
+    }
+
+    return 0;
+}
